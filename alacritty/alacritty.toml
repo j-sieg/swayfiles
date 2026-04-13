@@ -1,0 +1,11 @@
+[terminal.shell]
+program = "/usr/bin/toolbox"
+args = ["run", "-c", "fedora-toolbox-43", "zsh"]
+
+[window]
+opacity = 0.85
+
+[font]
+size = 13.0
+
+[terminal]
