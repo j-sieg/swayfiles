@@ -18,7 +18,8 @@
         "power-profiles-daemon",
         "idle_inhibitor",
         "tray",
-        "pulseaudio"
+        "pulseaudio",
+        "battery"
     ],
     // Modules configuration
     // "sway/workspaces": {

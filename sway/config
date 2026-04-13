@@ -243,7 +243,15 @@ bindsym $mod+Shift+f exec thunar
 bindsym ctrl+Shift+l exec swaylock -f -c 000000
 
 # Output
-output HDMI-A-1 mode 1920x1080@165Hz
+output HDMI-A-1 mode 1920x1080@120Hz pos 0 0
+output eDP-1 mode 1920x1080@60Hz
+
+# Workspaces on the monitor
+workspace 1 output HDMI-A-1
+workspace 2 output HDMI-A-1
+workspace 3 output HDMI-A-1
+workspace 4 output HDMI-A-1
+workspace 5 output HDMI-A-1
 
 # Idle config
 exec_always pkill swayidle; swayidle -w \

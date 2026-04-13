@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
-CONFIGS=(sway waybar rofi alacritty)
+CONFIGS=(sway waybar rofi alacritty foot)
 
 echo "📦 Installing core tools..."
+
+# May need to be commented if you already have these installed
 sudo rpm-ostree install alacritty btop fastfetch
 
 if fc-list | grep -qi "RobotoMono Nerd Font"; then
