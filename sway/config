@@ -32,7 +32,8 @@ set $menu $rofi_cmd -show drun
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg, jxl-pixbuf-loader
-output * bg /usr/share/backgrounds/default.jxl fill
+# output * bg /usr/share/backgrounds/default.jxl fill
+output * bg $HOME/Pictures/wallpapers/safe_landing.jpg fill
 #
 # Example configuration:
 #
@@ -230,6 +231,11 @@ bindsym $mod+r mode "resize"
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
 
 ### MY CUSTOM SHIT BELOW
+
+# Output
+output HDMI-A-1 mode 1920x1080@165Hz
+
+# Toolbox-ready terminal
 bindsym $mod+Shift+Return exec alacritty
 
 # Rofi on a different keybinding
@@ -239,18 +245,15 @@ bindsym $mod+space exec swaymsg exec -- $menu
 # Thunar
 bindsym $mod+Shift+f exec thunar
 
-# Lock
-bindsym ctrl+Shift+l exec swaylock -f -c 000000
-
-# Output
-output HDMI-A-1 mode 1920x1080@165Hz
+ # Lock
+bindsym ctrl+Shift+l exec swaylock -f -i $HOME/Pictures/wallpapers/safe_landing.jpg --indicator-caps-lock --show-failed-attempts
 
 # Idle config
 exec_always pkill swayidle; swayidle -w \
- timeout 1800 'swaylock -f -c 000000' \
+ timeout 1800 'swaylock -f -i $HOME/Pictures/wallpapers/safe_landing.jpg' \
  timeout 2100 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
- timeout 2400 'swaymsg "output * dpms on"; systemctl  suspend' \
- before-sleep 'swaymsg "output * dpms on"; swaylock -f -c 000000'
+ timeout 2400 'swaymsg "output * dpms on"; systemctl suspend' \
+ before-sleep 'swaymsg "output * dpms on"; swaylock -f -i $HOME/Pictures/wallpapers/safe_landing.jpg --indicator-caps-lock --show-failed-attempts'
 
 # Screenshot keybinds
 ## Region select
