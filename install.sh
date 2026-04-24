@@ -4,7 +4,7 @@ set -e
 CONFIGS=(sway foot waybar rofi alacritty)
 
 echo "📦 Installing core tools..."
-sudo rpm-ostree install alacritty btop fastfetch
+sudo rpm-ostree install --idempotent alacritty btop fastfetch
 
 if fc-list | grep -qi "RobotoMono Nerd Font"; then
   echo "🔤 RobotoMono Nerd Font already installed, skipping..."
