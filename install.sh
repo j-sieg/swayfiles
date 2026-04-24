@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-CONFIGS=(sway waybar rofi alacritty)
+CONFIGS=(sway foot waybar rofi alacritty)
 
 echo "📦 Installing core tools..."
 sudo rpm-ostree install alacritty btop fastfetch
