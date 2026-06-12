@@ -242,6 +242,9 @@ bindsym $mod+Shift+f exec thunar
 # Lock
 bindsym ctrl+Shift+l exec swaylock -f -c 000000
 
+# Output hotplug profiles
+exec_always pkill kanshi; kanshi
+
 # Output
 output HDMI-A-1 mode 1920x1080@120Hz pos 0 0
 output eDP-1 mode 1920x1080@60Hz
@@ -264,16 +267,5 @@ exec_always pkill swayidle; swayidle -w \
 ## Region select
 bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/screenshot-$(date +%s).png
 
-# Window title shit
-titlebar_border_thickness 2
-titlebar_padding 8
-gaps outer 5
-
-default_floating_border pixel 3
-
-hide_edge_borders none
-smart_borders off
-
-# Window border color
-client.focused #ff69b4 #ff69b4 #222222 #ff69b4 #ff69b4
-client.unfocused #444444 #222222 #aaaaaa #444444 #444444
+# Night light
+exec_always sh -c 'pkill -x wlsunset; exec wlsunset -T 5500 -t 5499'

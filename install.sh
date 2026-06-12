@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
-CONFIGS=(sway waybar rofi alacritty foot)
+CONFIGS=(sway waybar rofi alacritty foot kanshi)
 
 echo "📦 Installing core tools..."
 
 # May need to be commented if you already have these installed
-sudo rpm-ostree install alacritty btop fastfetch
+sudo rpm-ostree install alacritty btop fastfetch kanshi
 
 if fc-list | grep -qi "RobotoMono Nerd Font"; then
   echo "🔤 RobotoMono Nerd Font already installed, skipping..."
