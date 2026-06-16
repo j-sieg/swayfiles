@@ -4,7 +4,7 @@
 }
 
 window#waybar {
-  background-color: rgba(43, 48, 59, 0.5);
+  background-color: rgba(43, 48, 59, 1);
   color: #ffffff;
   transition-property: background-color;
   transition-duration: .5s;
@@ -116,7 +116,6 @@ button:hover {
 
 #clock {
   font-weight: bolder;
-  color: hotpink;
 }
 
 #battery {
